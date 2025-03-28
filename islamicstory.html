@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Selamat Hari Raya Idul Fitri 1446 H | Islamic Story</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #4CAF50, #FFC107);
+      color: white;
+      text-align: center;
+    }
+
+    #channel-logo {
+  background-image: url('logo.jpg');
+  width: 90px;
+  height: 90px;
+  margin: 20px auto; /* Auto untuk membuatnya tetap di tengah */
+  border-radius: 50%;
+  background-size: cover;
+  display: block;
+}
+
+    #ucapan {
+      width: 300px;
+      height: 150px;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .overlay button {
+      margin-top: 20px;
+      padding: 15px 25px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #FFD700;
+      color: #4CAF50;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .copyright {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      font-size: 11px;
+      opacity: 0.5;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="channel-logo"></div>
+  <h1>Selamat Hari Raya Idul Fitri 1446 H</h1>
+  <h2>Taqabbalallahu Minna Wa Minkum</h2>
+  <h3>Minal Aidin Wal Faizin</h3>
+  <h4>Mohon Maaf Lahir dan Batin</h4>
+  
+  <p>
+    <img id="ucapan" src="ucapan.jpg" alt="Ucapan Idul Fitri">
+  </p>
+
+  <!-- Audio -->
+  <audio id="takbiran" loop>
+    <source src="takbiran.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung pemutaran audio.
+  </audio>
+
+  <!-- Overlay Paksa Izin -->
+  <div id="overlay" class="overlay">
+    <h2>Klik "Izinkan" untuk memutar takbiran</h2>
+    <button id="allow-audio">Izinkan</button>
+  </div>
+
+  <div class="copyright">
+    <p>&copy;2025 - Islamic Story</p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let audio = document.getElementById("takbiran");
+      let overlay = document.getElementById("overlay");
+      let allowButton = document.getElementById("allow-audio");
+
+      // Paksa pengguna klik tombol
+      allowButton.addEventListener("click", function() {
+        audio.play();
+        overlay.style.display = "none"; // Hilangkan overlay setelah izin diberikan
+      });
+    });
+  </script>
+</body>
+</html>
